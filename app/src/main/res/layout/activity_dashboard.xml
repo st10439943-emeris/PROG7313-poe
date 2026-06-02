@@ -1,0 +1,384 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/finance_light_gray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Header with Logo -->
+
+            <!-- Main Dashboard Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-38dp"
+                android:orientation="vertical"
+                android:paddingStart="22dp"
+                android:paddingEnd="22dp"
+                android:paddingBottom="24dp">
+
+                <!-- Month Overview Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/finance_navy"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/tvHamburgerMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:padding="8dp"
+                        android:text="☰"
+                        android:textColor="@color/finance_white"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgDashboardLogo"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:contentDescription="Finance Flex Logo"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/finance_flex_logo" />
+
+                    <TextView
+                        android:id="@+id/tvDashboardTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Finance Flex"
+                        android:textColor="@color/finance_white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvWelcomeMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="Welcome back"
+                        android:textColor="@color/finance_teal"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/finance_white"
+                    android:elevation="6dp"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvMonthOverviewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Monthly Performance"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotalSpent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Money Burn"
+                        android:textColor="@color/finance_gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvSpentAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="R0.00"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotalIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Income Fuel: R0.00"
+                        android:textColor="@color/finance_dark_navy"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvBudgetStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Goal Zone: Set your monthly goals"
+                        android:textColor="@color/finance_teal"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvGoalProgressLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Goal Zone Progress"
+                        android:textColor="@color/finance_dark_navy"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressGoalZone"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="8dp"
+                        android:max="100"
+                        android:progress="0" />
+
+                    <TextView
+                        android:id="@+id/tvGoalProgressText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="No goal progress yet."
+                        android:textColor="@color/finance_gray"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- Dashboard Expense Pie Chart Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/finance_white"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/tvDashboardPieTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="This Month's Expense Breakdown"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <com.example.financeflex.PieChartView
+                        android:id="@+id/dashboardPieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/finance_white"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/finance_white"
+                    android:elevation="4dp"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/tvStreakIcon"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/bg_logo_circle"
+                        android:gravity="center"
+                        android:text="🔥"
+                        android:textSize="28sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMoneyMovesTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Money Moves"
+                            android:textColor="@color/finance_navy"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMoneyMoves"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Log entries to build your streak."
+                            android:textColor="@color/finance_gray"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Financial Fitness Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/finance_white"
+                    android:elevation="4dp"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <ImageView
+                        android:id="@+id/imgFitnessLogo"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/bg_logo_circle"
+                        android:padding="8dp"
+                        android:src="@drawable/finance_flex_logo"
+                        android:contentDescription="Finance Flex Logo"
+                        android:scaleType="fitCenter" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFinancialFitnessTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fitness Score"
+                            android:textColor="@color/finance_navy"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvFinancialFitness"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Financial Fitness Score: 0/100"
+                            android:textColor="@color/finance_dark_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvFinancialFitnessStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Form: Add entries to calculate your score."
+                            android:textColor="@color/finance_gray"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/finance_white"
+                    android:elevation="3dp"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🏆 Monthly Challenges"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView android:id="@+id/tvGroceryText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Grocery Saver: 0 / R1000" />
+                    <ProgressBar android:id="@+id/progressGrocery" android:layout_width="match_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" />
+
+                    <TextView android:id="@+id/tvSpendLessText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Spend Less: 0 / R5000" />
+                    <ProgressBar android:id="@+id/progressSpendLess" android:layout_width="match_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" />
+
+                    <TextView android:id="@+id/tvSalaryText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Salary Builder: 0 / R5000" />
+                    <ProgressBar android:id="@+id/progressSalary" android:layout_width="match_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" />
+
+                    <TextView android:id="@+id/tvStreakText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Money Move Streak: 0 / 10" />
+                    <ProgressBar android:id="@+id/progressStreak" android:layout_width="match_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" />
+
+                    <TextView android:id="@+id/tvReceiptText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Receipt Master: 0 / 5" />
+                    <ProgressBar android:id="@+id/progressReceipt" android:layout_width="match_parent" android:layout_height="10dp" style="?android:attr/progressBarStyleHorizontal" />
+
+                </LinearLayout>
+
+
+                <!-- Money Tip Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/finance_white"
+                    android:elevation="3dp"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Coach's Tip"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMoneyTip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Log your expenses daily to keep your budget accurate."
+                        android:textColor="@color/finance_gray"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/finance_white"
+        app:itemIconTint="@color/bottom_nav_item_colour"
+        app:itemTextColor="@color/bottom_nav_item_colour"
+        app:itemActiveIndicatorStyle="@null"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

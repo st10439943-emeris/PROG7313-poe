@@ -1,0 +1,235 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/finance_light_gray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@color/finance_navy"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Progress Report"
+                    android:textColor="@color/finance_white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Review your money moves by date and zone."
+                    android:textColor="@color/finance_teal"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-28dp"
+                android:orientation="vertical"
+                android:paddingStart="22dp"
+                android:paddingEnd="22dp"
+                android:paddingBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/finance_white"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter Money Moves"
+                        android:textColor="@color/finance_navy"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnStartDate"
+                            android:layout_width="0dp"
+                            android:layout_height="54dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_primary_button"
+                            android:text="Start Date"
+                            android:textAllCaps="false"
+                            android:textColor="@color/finance_white"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btnEndDate"
+                            android:layout_width="0dp"
+                            android:layout_height="54dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_primary_button"
+                            android:text="End Date"
+                            android:textAllCaps="false"
+                            android:textColor="@color/finance_white"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Category"
+                        android:textColor="@color/finance_dark_navy"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerFilterCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="10dp" />
+
+                    <Button
+                        android:id="@+id/btnLoadEntries"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_primary_button"
+                        android:text="Apply Filter"
+                        android:textAllCaps="false"
+                        android:textColor="@color/finance_white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvEntriesMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/finance_red"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvEntriesListTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Money Moves"
+                    android:textColor="@color/finance_navy"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEntriesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/finance_white"
+                    android:elevation="3dp"
+                    android:padding="18dp"
+                    android:text="No entries loaded yet."
+                    android:textColor="@color/finance_dark_navy"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnViewReceipts"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_primary_button"
+                    android:text="View Receipts"
+                    android:textAllCaps="false"
+                    android:textColor="@color/finance_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReportSummaryTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Performance Summary"
+                    android:textColor="@color/finance_navy"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReportSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/finance_white"
+                    android:elevation="3dp"
+                    android:padding="18dp"
+                    android:text="Load entries to view totals."
+                    android:textColor="@color/finance_dark_navy"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvPieChartTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Money Burn Breakdown"
+                    android:textColor="@color/finance_navy"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.example.financeflex.PieChartView
+                    android:id="@+id/pieChartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/finance_white"
+                    android:elevation="3dp"
+                    android:padding="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/finance_white"
+        app:itemIconTint="@color/bottom_nav_item_colour"
+        app:itemTextColor="@color/bottom_nav_item_colour"
+        app:itemActiveIndicatorStyle="@null"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

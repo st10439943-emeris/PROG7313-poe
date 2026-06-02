@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567962702551",
+    "project_id": "financeflex-17511",
+    "storage_bucket": "financeflex-17511.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567962702551:android:d82fc93c56465859009692",
+        "android_client_info": {
+          "package_name": "com.example.financeflex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr9Z3S6Qhxh347TrZVrmRFqfJu7LhZNHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
