@@ -1,6 +1,7 @@
 package com.example.financeflex
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.ProgressBar
@@ -16,6 +17,7 @@ import java.util.Calendar
 import java.util.Locale
 import android.view.View
 import android.widget.PopupMenu
+import androidx.annotation.RequiresApi
 
 /**
  * Main dashboard screen for the FinanceFlex application.
@@ -43,6 +45,7 @@ class DashboardActivity : AppCompatActivity() {
     private val currencyFormatter: NumberFormat =
         NumberFormat.getCurrencyInstance(Locale("en", "ZA"))
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
@@ -85,6 +88,7 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
         loadDashboardData()
@@ -123,6 +127,7 @@ class DashboardActivity : AppCompatActivity() {
      * Loads and processes all financial data for the dashboard view.
      * Both Goals and Transactions are now pulled directly from Firebase Firestore!
      */
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadDashboardData() {
         if (userId == "-1") {
             tvSpentAmount.text = "R0.00"

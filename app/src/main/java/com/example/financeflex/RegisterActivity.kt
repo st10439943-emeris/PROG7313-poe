@@ -1,11 +1,13 @@
 package com.example.financeflex
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financeflex.data.entities.User
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,6 +22,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private val tag = "FinanceFlexRegister"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)

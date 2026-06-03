@@ -1,11 +1,13 @@
 package com.example.financeflex
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financeflex.data.entities.User
 
@@ -22,6 +24,7 @@ class AccountSettingsActivity : AppCompatActivity() {
     private lateinit var edtUsername: EditText
     private lateinit var tvMessage: TextView
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account_settings)
@@ -49,6 +52,7 @@ class AccountSettingsActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadUserDetails() {
         if (userId == "-1") {
             tvMessage.setTextColor(getColor(R.color.finance_red))
@@ -60,7 +64,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             .whereEqualTo("userId", userId)
             .get()
             .addOnSuccessListener { querySnapshot ->
-                if (querySnapshot.isEmpty) {
+                if (querySnapshot.isEmpty()) {
                     tvMessage.setTextColor(getColor(R.color.finance_red))
                     tvMessage.text = "Account details load failed."
                     return@addOnSuccessListener
@@ -82,6 +86,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun saveAccountSettings() {
         val name = edtName.text.toString().trim()
         val surname = edtSurname.text.toString().trim()
@@ -104,7 +109,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             .whereEqualTo("userId", userId)
             .get()
             .addOnSuccessListener { documents ->
-                if (documents.isEmpty) return@addOnSuccessListener
+                if (documents.isEmpty()) return@addOnSuccessListener
                 val docId = documents.documents[0].id
 
                 FirebaseManager.firestore.collection("users").document(docId)

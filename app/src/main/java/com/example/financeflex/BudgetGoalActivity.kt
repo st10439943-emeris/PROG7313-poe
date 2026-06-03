@@ -1,12 +1,14 @@
 package com.example.financeflex
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financeflex.data.entities.BudgetGoal
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -34,6 +36,7 @@ class BudgetGoalActivity : AppCompatActivity() {
     private val currencyFormatter: NumberFormat =
         NumberFormat.getCurrencyInstance(Locale("en", "ZA"))
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_budget_goal)
@@ -109,6 +112,7 @@ class BudgetGoalActivity : AppCompatActivity() {
     }
 
     // Loads existing budget goal from Firebase.
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadExistingGoal(month: Int, year: Int) {
         if (userId == "-1") {
             tvGoalMessage.setTextColor(getColor(R.color.finance_red))
@@ -149,6 +153,7 @@ class BudgetGoalActivity : AppCompatActivity() {
     }
 
     // Validates and saves data to Firebase.
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun saveBudgetGoal(month: Int, year: Int) {
         val minGoalText = edtMinGoal.text.toString().trim()
         val maxGoalText = edtMaxGoal.text.toString().trim()

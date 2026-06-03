@@ -1,11 +1,13 @@
 package com.example.financeflex
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -17,6 +19,7 @@ class AddCategoryActivity : AppCompatActivity() {
     private val tag = "FinanceFlexAddCategory"
     private var userId: String = "-1"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_category)

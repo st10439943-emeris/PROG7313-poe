@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // You track user progress for the Emergency Fund Plan and Frugal February in this file.
@@ -25,6 +27,7 @@ class ChallengesActivity : AppCompatActivity() {
 
     private val currencyFormatter: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "ZA"))
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenges)
@@ -42,6 +45,7 @@ class ChallengesActivity : AppCompatActivity() {
         setupBottomNavigation(bottomNavigation)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadWorkoutPlans() {
         if (userId == "-1") {
             tvChallengesMessage.setTextColor(getColor(R.color.finance_red))

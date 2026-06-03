@@ -2,12 +2,14 @@ package com.example.financeflex
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financeflex.data.entities.Category
 import com.example.financeflex.data.entities.TransactionEntry
@@ -42,6 +44,7 @@ class ViewEntriesActivity : AppCompatActivity() {
     private val currencyFormatter: NumberFormat =
         NumberFormat.getCurrencyInstance(Locale("en", "ZA"))
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_entries)
@@ -89,6 +92,7 @@ class ViewEntriesActivity : AppCompatActivity() {
         btnEndDate.text = "To\n$selectedEndDate"
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadCategoryFilter() {
         if (userId == "-1") return
 
@@ -124,6 +128,7 @@ class ViewEntriesActivity : AppCompatActivity() {
         }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadEntries() {
         if (userId == "-1") return
 

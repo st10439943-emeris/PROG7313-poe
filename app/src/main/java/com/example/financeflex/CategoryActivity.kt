@@ -1,10 +1,12 @@
 package com.example.financeflex
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.financeflex.data.entities.Category
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -69,11 +71,13 @@ class CategoryActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
         loadCategories()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadCategories() {
         if (userId == "-1") {
             tvCategoriesList.text = "User not found. Please login again."
@@ -103,6 +107,7 @@ class CategoryActivity : AppCompatActivity() {
             }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun insertDefaultCategories() {
         tvCategoriesList.text = "Setting up default categories..."
 

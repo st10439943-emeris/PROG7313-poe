@@ -2,6 +2,7 @@ package com.example.financeflex
 
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.financeflex.data.entities.TransactionEntry
@@ -60,6 +62,7 @@ class ReceiptViewerActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receipt_viewer)
@@ -130,6 +133,7 @@ class ReceiptViewerActivity : AppCompatActivity() {
     /**
      * Loads receipt entries directly from Firestore.
      */
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadReceiptEntries() {
         if (userId == "-1") {
             tvMessage.setTextColor(getColor(R.color.finance_red))
